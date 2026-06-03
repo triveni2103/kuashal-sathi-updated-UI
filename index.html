@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Kaushal Saathi — Teacher Companion</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.12.0/dist/tabler-icons.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Style.css">
+</head>
+<body>
+<h2 class="sr-only">Kaushal Saathi — Teacher Lesson Plan Companion for NCERT Kaushal Bodh</h2>
+<div class="frame">
+
+<!-- ══ SCREEN: SPLASH ══ -->
+<div class="screen active" id="s-splash">
+  <div class="splash">
+    <div class="splash-logo">📚</div>
+    <div>
+      <div class="splash-tag">Kaushal Saathi</div>
+      <div class="splash-h"><br>Lesson Planner</div>
+      <div class="splash-sub">NCERT Kaushal Bodh · NEP 2020 Aligned</div>
+    </div>
+    <div class="splash-pill">🇮🇳 Grades 6–8 · All Vocational Themes</div>
+    <div style="font-size:13px;color:var(--mint-dark);opacity:.8;line-height:1.65;text-align:center;">Select your topic and project — get an instant interactive lesson plan with AI, voice, multimedia & assessments.</div>
+    <button class="splash-btn" onclick="go('s-home')">Start Planning →</button>
+    <div class="splash-features-row">
+      <div class="splash-feat"><i class="ti ti-brain"></i><span>AI Powered</span></div>
+      <div class="splash-feat"><i class="ti ti-microphone"></i><span>Voice Input</span></div>
+      <div class="splash-feat"><i class="ti ti-device-gamepad-2"></i><span>Gamified</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SCREEN: HOME ══ -->
+<div class="screen" id="s-home">
+  <div class="status"><div style="display:flex;align-items:center;gap:8px;"><button class="hamburger-btn" onclick="openSidebar()"><i class="ti ti-menu-2"></i></button><span>Kaushal Saathi</span></div><div class="xp-display-top"><i class="ti ti-star-filled"></i> <span id="xp-count">140</span> XP</div></div>
+  <div class="scrollable">
+    <div class="home-header">
+      <div class="greet">Namaste, Shikshak ji 🙏</div>
+      <div class="home-h">Choose Your Topic</div>
+      <div class="home-sub">Tap a vocational theme to see projects &amp; lesson plans</div>
+    </div>
+    <div class="sec-label">3 Vocational Themes</div>
+
+    <div class="topic-card" onclick="selectTopic('life')">
+      <div class="topic-row">
+        <div class="topic-icon" style="background:var(--mint);">🌱</div>
+        <div class="topic-info">
+          <div class="topic-title">Work with Life Forms</div>
+          <div class="topic-meta">Plant &amp; animal-based vocational activities</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;">
+            <span class="chip chip-mint">2 Projects</span>
+            <span class="chip chip-mint">Kitchen Garden · Biodiversity</span>
+          </div>
+        </div>
+        <i class="ti ti-chevron-right" style="color:var(--text-muted);font-size:18px;"></i>
+      </div>
+    </div>
+
+    <div class="topic-card" onclick="selectTopic('machines')">
+      <div class="topic-row">
+        <div class="topic-icon" style="background:var(--peach);">⚙️</div>
+        <div class="topic-info">
+          <div class="topic-title">Work with Machines &amp; Materials</div>
+          <div class="topic-meta">Tools, making, digital skills</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;">
+            <span class="chip chip-peach">2 Projects</span>
+            <span class="chip chip-peach">Maker Skills · Animation</span>
+          </div>
+        </div>
+        <i class="ti ti-chevron-right" style="color:var(--text-muted);font-size:18px;"></i>
+      </div>
+    </div>
+
+    <div class="topic-card" onclick="selectTopic('services')">
+      <div class="topic-row">
+        <div class="topic-icon" style="background:var(--lavender);">🤝</div>
+        <div class="topic-info">
+          <div class="topic-title">Work in Human Services</div>
+          <div class="topic-meta">Community, culture, food services</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;">
+            <span class="chip chip-lavender">2 Projects</span>
+            <span class="chip chip-lavender">School Museum · Cooking</span>
+          </div>
+        </div>
+        <i class="ti ti-chevron-right" style="color:var(--text-muted);font-size:18px;"></i>
+      </div>
+    </div>
+
+    <div class="sec-label">Scorecard Summary</div>
+    <div class="score-card">
+      <div class="score-title">All Topics — Period Overview</div>
+      <div class="score-row"><span class="score-label">Work with Life Forms</span><span class="score-val">48 periods</span></div>
+      <div class="score-row"><span class="score-label">Work with Machines &amp; Materials</span><span class="score-val">48 periods</span></div>
+      <div class="score-row"><span class="score-label">Work in Human Services</span><span class="score-val">48 periods</span></div>
+      <div class="score-row" style="background:var(--mint);margin:-1px -1px -1px;border-radius:0 0 8px 8px;padding:8px 0;"><span class="score-label" style="color:var(--mint-dark);font-weight:500;padding-left:4px;">Total</span><span class="score-val" style="color:var(--mint-dark);">144 periods</span></div>
+    </div>
+    <div style="height:8px;"></div>
+  </div>
+  <div class="bottom-nav">
+    <button class="nav-item active" onclick="go('s-home')"><i class="ti ti-home"></i>Home</button>
+    <button class="nav-item" onclick="go('s-home')"><i class="ti ti-book-2"></i>Topics</button>
+    <button class="nav-item" onclick="go('s-home')"><i class="ti ti-clipboard-list"></i>Scorecard</button>
+  </div>
+</div>
+
+<!-- ══ SCREEN: TOPIC PROJECTS ══ -->
+<div class="screen" id="s-topic">
+  <div class="status"><span>Kaushal Saathi</span><span id="topic-status-tag">Projects</span></div>
+  <div style="flex-shrink:0;">
+    <div class="back-bar">
+      <button class="back-btn-sm" onclick="go('s-home')" style="color:var(--mint-dark);"><i class="ti ti-arrow-left" style="font-size:16px;"></i><span>Topics</span></button>
+    </div>
+    <div id="topic-header" style="padding:12px 20px 16px;"></div>
+  </div>
+  <div class="scrollable" id="topic-projects-list"></div>
+</div>
+
+<!-- ══ SCREEN: ACTIVITIES LIST ══ -->
+<div class="screen" id="s-activities">
+  <div class="status"><span>Kaushal Saathi</span><span id="act-status-tag">Activities</span></div>
+  <div style="flex-shrink:0;">
+    <div class="back-bar">
+      <button class="back-btn-sm" onclick="go('s-topic')" id="acts-back-btn" style="color:var(--mint-dark);"><i class="ti ti-arrow-left" style="font-size:16px;"></i><span id="acts-back-label">Projects</span></button>
+    </div>
+    <div id="act-header" style="padding:12px 20px 14px;"></div>
+  </div>
+  <div class="scrollable" id="activities-list"></div>
+</div>
+
+<!-- ══ SCREEN: FULL INTERACTIVE LESSON PLAN ══ -->
+<div class="screen" id="s-lesson">
+  <div class="status lesson-status-bar">
+    <div style="display:flex;align-items:center;gap:8px;">
+      <button class="hamburger-btn" onclick="openSidebar()"><i class="ti ti-menu-2"></i></button>
+      <span>Kaushal Saathi</span>
+    </div>
+    <div class="lesson-status-right">
+      <div class="xp-display-top live-xp"><i class="ti ti-star-filled"></i> <span id="lesson-xp">140</span> XP</div>
+      <div class="badge-display" id="lesson-badge"></div>
+    </div>
+  </div>
+
+  <!-- Lesson Header -->
+  <div class="lesson-top" id="lesson-header-area">
+    <div class="lesson-nav-row">
+      <button class="back-btn-sm" onclick="go('s-activities')" style="color:var(--mint-dark);"><i class="ti ti-arrow-left" style="font-size:16px;"></i><span id="lesson-back-label">Activities</span></button>
+      <div class="mode-switch">
+        <button class="mode-btn active" id="btn-teach-mode" onclick="toggleViewMode('teach')">👩‍🏫 Teach</button>
+        <button class="mode-btn" id="btn-student-mode" onclick="toggleViewMode('student')">🎒 Student</button>
+      </div>
+    </div>
+    <div class="lesson-h" id="lesson-title">Loading...</div>
+    <div class="lesson-chips" id="lesson-chips"></div>
+  </div>
+
+  <!-- Tab Strip -->
+  <div class="tab-strip" id="lesson-tabs"></div>
+
+  <!-- Progress Bar -->
+  <div class="progress-container">
+    <div class="progress-bar" id="lesson-progress" style="width:10%;"></div>
+    <div class="progress-label" id="progress-label">Overview</div>
+  </div>
+
+  <!-- Lesson Content Area -->
+  <div class="scrollable lesson-scrollable" id="lesson-content"></div>
+
+  <!-- Floating Buttons Cluster -->
+  <div class="floating-cluster">
+    <button class="float-btn float-voice" onclick="toggleVoiceInput()" id="voice-float-btn" title="Voice Input">
+      <i class="ti ti-microphone"></i>
+    </button>
+    <button class="float-btn float-ai" onclick="openAiChat()" title="Ask AI">
+      <i class="ti ti-message-chatbot"></i>
+      <span class="float-badge">AI</span>
+    </button>
+  </div>
+
+  <!-- Bottom Quick Actions -->
+<div class="offline-footer">
+    <button class="footer-action-btn" onclick="go('s-advanced')"><i class="ti ti-settings"></i> Options</button>
+    <button class="footer-action-btn period-toggle-btn" id="foot-p1-btn" onclick="directPeriodRoute(1)"><i class="ti ti-circle-number-1"></i> P1</button>
+    <button class="footer-action-btn period-toggle-btn" id="foot-p2-btn" onclick="directPeriodRoute(2)"><i class="ti ti-circle-number-2"></i> P2</button>
+    <button class="footer-action-btn" onclick="window.print()"><i class="ti ti-printer"></i> Print</button>
+    <button class="footer-action-btn" onclick="toggleFullscreen()"><i class="ti ti-maximize"></i> Full</button>
+  </div>
+
+<!-- ══ AI CHAT MODAL ══ -->
+<div class="ai-modal-overlay" id="ai-chat-modal" onclick="closeAiChat()">
+  <div class="ai-modal-content" onclick="event.stopPropagation()">
+    <div class="ai-modal-header">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="ai-avatar-blob">🤖</div>
+        <div>
+          <div class="ai-system-title">Kaushal Saathi Assistant</div>
+          <div class="ai-system-status"><span class="ai-online-dot"></span> AI Powered · Always Active</div>
+        </div>
+      </div>
+      <button class="close-modal-btn" onclick="closeAiChat()"><i class="ti ti-x"></i></button>
+    </div>
+    <div class="ai-modal-body">
+      <div class="chat-bubble-stream" id="ai-chat-stream">
+        <div class="ai-bubble-bot">🙏 Namaste! I'm your Kaushal Saathi assistant. Ask me anything about this lesson — recipes, measurements, safety, or activities!</div>
+      </div>
+      <div class="ai-suggestions" id="ai-suggestions-area">
+        <button onclick="sendAiMessage('Salt kiti add karaycha?')">🧂 Salt kiti add karaycha?</button>
+        <button onclick="sendAiMessage('Measurement samjat nahi ahe')">📏 Measurement samjat nahi</button>
+        <button onclick="sendAiMessage('Next activity kay ahe?')">➡️ Next activity kay ahe?</button>
+        <button onclick="sendAiMessage('Safety rules explain karo')">🛡️ Safety rules explain karo</button>
+      </div>
+    </div>
+    <div class="chat-input-row">
+      <button class="voice-input-btn" onclick="startVoiceForChat()" id="chat-voice-btn" title="Speak">
+        <i class="ti ti-microphone"></i>
+      </button>
+      <input type="text" id="ai-custom-input" placeholder="Ask anything about this lesson..." onkeydown="if(event.key==='Enter') sendAiMessage()">
+      <button class="chat-send-btn" onclick="sendAiMessage()"><i class="ti ti-send"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ VOICE INPUT MODAL ══ -->
+<div class="voice-modal-overlay" id="voice-modal">
+  <div class="voice-modal-content">
+    <div class="voice-pulse-ring">
+      <div class="voice-inner-circle">
+        <i class="ti ti-microphone"></i>
+      </div>
+    </div>
+    <div class="voice-listening-text">Listening...</div>
+    <div class="voice-result-text" id="voice-result-text">Speak now</div>
+    <button class="voice-stop-btn" onclick="stopVoiceInput()">Stop</button>
+  </div>
+</div>
+
+<!-- ══ ACHIEVEMENT TOAST ══ -->
+<div class="achievement-toast" id="achievement-toast">
+  <div class="achievement-inner">
+    <span class="achievement-icon" id="achievement-icon">🏆</span>
+    <div>
+      <div class="achievement-title" id="achievement-title">Badge Earned!</div>
+      <div class="achievement-sub" id="achievement-sub">Keep going!</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SIDEBAR OVERLAY ══ -->
+<div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<!-- ══ SIDEBAR DRAWER ══ -->
+<div class="sidebar-drawer" id="sidebar-drawer">
+  <div class="sidebar-head">
+    <div class="sidebar-brand">Kaushal<br>Saathi</div>
+    <div class="sidebar-sub">Teacher Platform</div>
+    <div class="sidebar-streak">🔥 2 Day Streak</div>
+  </div>
+  <div class="sidebar-body">
+    <div class="sidebar-section-label">Main</div>
+    <button class="sidebar-item" onclick="closeSidebar();go('s-home')"><i class="ti ti-layout-dashboard"></i>Dashboard</button>
+    <button class="sidebar-item active" onclick="closeSidebar();go('s-home')"><i class="ti ti-sparkles"></i>AI Lesson Plan</button>
+    <button class="sidebar-item" onclick="closeSidebar();go('s-home')"><i class="ti ti-folders"></i>Projects</button>
+    <button class="sidebar-item" onclick="closeSidebar();go('s-home')"><i class="ti ti-books"></i>Content Repository</button>
+    <button class="sidebar-item" onclick="closeSidebar();go('s-home')"><i class="ti ti-clipboard-check"></i>Assessments</button>
+    <button class="sidebar-item" onclick="closeSidebar();go('s-home')"><i class="ti ti-map-pin"></i>Field Visits</button>
+    <button class="sidebar-item" onclick="closeSidebar();go('s-home')"><i class="ti ti-calendar"></i>Timetable</button>
+    <button class="sidebar-item" onclick="closeSidebar();go('s-home')"><i class="ti ti-device-gamepad-2"></i>Gamified Zone</button>
+    <div class="sidebar-section-label">Teaching &amp; Integration</div>
+    <button class="sidebar-item" onclick="closeSidebar();go('s-home')"><i class="ti ti-git-merge"></i>Subject Integration</button>
+    <div class="sidebar-section-label">Connect</div>
+    <button class="sidebar-item" onclick="closeSidebar();openAiChat()"><i class="ti ti-message-chatbot"></i>AI Chat</button>
+    <button class="sidebar-item" onclick="closeSidebar()"><i class="ti ti-bell"></i>Notifications</button>
+    <div class="sidebar-section-label">Achievements &amp; Insights</div>
+    <button class="sidebar-item" onclick="closeSidebar()"><i class="ti ti-trophy"></i>My Badges</button>
+    <button class="sidebar-item" onclick="closeSidebar()"><i class="ti ti-chart-bar"></i>Progress Report</button>
+  </div>
+  <div class="sidebar-foot" onclick="closeSidebar()">
+    <div class="sidebar-avatar">TR</div>
+    <div>
+      <div class="sidebar-user-name">Triveni Sinnur...</div>
+      <div class="sidebar-user-role">abc-lahi</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SCREEN: ADVANCED OPTIONS ══ -->
+<div class="screen" id="s-advanced">
+  <div class="status">
+    <div style="display:flex;align-items:center;gap:8px;">
+      <button class="back-btn-sm" onclick="go('s-lesson')" style="color:var(--mint-dark);"><i class="ti ti-arrow-left" style="font-size:16px;"></i></button>
+      <span>Advanced Options</span>
+    </div>
+    <span style="font-size:10px;color:var(--text-muted);">Personalise your plan</span>
+  </div>
+  <div class="scrollable">
+    <div class="adv-screen-inner">
+      <div class="adv-section-title">Classroom Setup</div>
+      <div class="adv-row">
+        <div class="adv-field">
+          <label class="adv-label">Period Duration (min)</label>
+          <input class="adv-input" type="number" id="adv-period" value="35" min="10" max="90">
+        </div>
+        <div class="adv-field">
+          <label class="adv-label">Class Size</label>
+          <select class="adv-input adv-select" id="adv-classsize">
+            <option>Small (&lt;20)</option>
+            <option selected>Medium (20–35)</option>
+            <option>Large (35+)</option>
+          </select>
+        </div>
+      </div>
+      <div class="adv-row">
+        <div class="adv-field">
+          <label class="adv-label"><i class="ti ti-map-pin" style="font-size:11px;"></i> State</label>
+          <select class="adv-input adv-select" id="adv-state">
+            <option value="">Select state</option>
+            <option>Maharashtra</option><option>Karnataka</option><option>Tamil Nadu</option>
+            <option>Uttar Pradesh</option><option>Rajasthan</option><option>Gujarat</option>
+            <option>Madhya Pradesh</option><option>West Bengal</option><option>Kerala</option>
+            <option>Andhra Pradesh</option><option>Telangana</option><option>Bihar</option>
+            <option>Odisha</option><option>Punjab</option><option>Haryana</option>
+            <option>Assam</option><option>Jharkhand</option><option>Chhattisgarh</option>
+            <option>Uttarakhand</option><option>Delhi</option>
+          </select>
+        </div>
+        <div class="adv-field">
+          <label class="adv-label"><i class="ti ti-map-pin" style="font-size:11px;"></i> City / District</label>
+          <input class="adv-input" type="text" id="adv-city" placeholder="e.g. Pune">
+        </div>
+      </div>
+
+      <div class="adv-section-title" style="padding-top:4px;">Available Resources</div>
+      <div class="adv-resources-row" id="adv-resources">
+        <button class="adv-resource-chip selected" onclick="toggleResource(this)">✏️ Chalk &amp; Board</button>
+        <button class="adv-resource-chip" onclick="toggleResource(this)">📽️ Projector</button>
+        <button class="adv-resource-chip" onclick="toggleResource(this)">📱 Mobile Phone</button>
+        <button class="adv-resource-chip" onclick="toggleResource(this)">💻 Laptop</button>
+        <button class="adv-resource-chip" onclick="toggleResource(this)">📺 TV / Screen</button>
+        <button class="adv-resource-chip" onclick="toggleResource(this)">🖨️ Printer</button>
+      </div>
+
+      <div class="adv-field" style="margin-bottom:10px;">
+        <label class="adv-label">Available Tools</label>
+        <div class="adv-tools-row">
+          <input class="adv-tools-input" type="text" id="adv-tool-input" placeholder="e.g. scissors, ruler, measuring tape">
+          <button class="adv-add-btn" onclick="addTool()">Add</button>
+        </div>
+        <div class="adv-tools-tags" id="adv-tools-tags"></div>
+      </div>
+
+      <hr class="adv-divider">
+      <div class="adv-toggle-row">
+        <span class="adv-toggle-label">Internet Available</span>
+        <label class="adv-toggle"><input type="checkbox" id="adv-internet"><span class="adv-toggle-slider"></span></label>
+      </div>
+      <hr class="adv-divider">
+
+      <div class="adv-subject-box">
+        <div class="adv-subject-title">Subject Integration</div>
+        <div class="adv-subject-sub">Link this lesson to an academic subject so the AI weaves those connections into activities and discussion questions.</div>
+        <div class="adv-row" style="margin-bottom:10px;">
+          <div class="adv-field">
+            <label class="adv-label">Subject</label>
+            <select class="adv-input adv-select" id="adv-subject">
+              <option value="">Select subject</option>
+              <option>Mathematics</option><option>Science</option><option>Social Science</option>
+              <option>Hindi</option><option>English</option><option>Art &amp; Craft</option>
+              <option>Physical Education</option><option>Environmental Science</option>
+            </select>
+          </div>
+          <div class="adv-field">
+            <label class="adv-label">How to integrate <span style="font-weight:500;opacity:.7;">(optional)</span></label>
+            <input class="adv-input" type="text" id="adv-integrate" placeholder="e.g. fractions in recipe ratios">
+          </div>
+        </div>
+      </div>
+
+      <div class="adv-field" style="margin-bottom:16px;">
+        <label class="adv-label">Teaching Challenge / Notes <span style="font-weight:500;opacity:.7;">(optional)</span></label>
+        <textarea class="adv-textarea" id="adv-challenge" placeholder="e.g. Students struggle with tool identification..."></textarea>
+      </div>
+
+      <button class="adv-apply-btn" onclick="applyAdvancedOptions()">✓ Apply &amp; Regenerate Plan</button>
+    </div>
+  </div>
+</div>
+
+</div><!-- /.frame -->
+<script src="scripts.js"></script>
+</body>
+</html>
